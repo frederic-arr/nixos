@@ -23,14 +23,14 @@
               settings.allowDiscards = true;
               content = {
                 type = "zfs";
-                pool = "zroot";
-              }
+                pool = "rpool";
+              };
             };
           };
         };
       };
     };
-    zpool.zroot = {
+    zpool.rpool = {
       type = "zpool";
       rootFsOptions = {
         acltype = "posixacl";
@@ -46,16 +46,16 @@
         autotrim = "on";
       };
       datasets = {
-        "rpool/local/root" = {
+        "local/root" = {
           type = "zfs_fs";
           mountpoint = "/";
           postCreateHook = "zfs snapshot rpool/local/root@blank";
         };
-        "rpool/local/nix" = {
+        "local/nix" = {
           type = "zfs_fs";
           mountpoint = "/nix";
         };
-        "rpool/safe/persist" = {
+        "safe/persist" = {
           type = "zfs_fs";
           mountpoint = "/persist";
         };

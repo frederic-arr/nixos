@@ -26,4 +26,4 @@ nixos-generate-config --no-filesystems --show-hardware-config > /mnt/etc/nixos/h
 echo "Installing NixOs"
 mkdir -p /mnt/persist/etc/nixos
 cp -ra /mnt/etc/nixos/. /mnt/persist/etc/
-nixos-install -j 100 --cores 8 --root /mnt --flake /mnt/etc/nixos#default
+# nixos-install -j 100 --cores 8 --root /mnt --flake /mnt/etc/nixos#default

@@ -9,6 +9,11 @@ let
       zfs destroy -r rpool/local/root@boot || true && zfs snapshot rpool/local/root@boot
     '';
 
+    diff-root = pkgs.writers.writeDashBin "diff-root"
+    ''
+      export PATH=${with pkgs; makeBinPath [ zfs awk ]}:$PATH
+      zfs diff -H rpool/local/root@boot | awk '! /.\t\/tmp($|\/)/'
+    '';
 in
 
 {
@@ -52,6 +57,7 @@ in
   };
 
   environment.systemPackages = [
+    diff-root
     pkgs.git
     pkgs.gh
   ];

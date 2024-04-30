@@ -12,8 +12,8 @@ SWAP=$2
 echo "Downloading repository"
 sudo su root
 rm -rf /tmp/nixos-main /tmp/nixos-main.zip
-curl -L https://github.com/frederic-arr/nixos/archive/refs/main.zip -o /tmp/nixos-main.zip
-unzip /tmp/nixos-main.zip
+curl -L https://github.com/frederic-arr/nixos/archive/refs/heads/main.zip -o /tmp/nixos-main.zip
+unzip /tmp/nixos-main.zip -d /tmp
 
 echo "Setting up partitions"
 nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/nixos-main/disko.nix --arg device "\"$DEVICE\"" --arg swapSize "\"$SWAP\""

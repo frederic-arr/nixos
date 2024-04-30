@@ -50,7 +50,7 @@
     after = [ "-.mount" ];
     serviceConfig.Type = "oneshot";
     serviceConfig.RemainAfterExit = true;
-    serviceConfig.ExecStart = "/bin/bash -c 'zfs destroy -r rpool/local/root@boot || true && zfs snapshot rpool/local/root@boot'";
+    serviceConfig.ExecStart = "\"/bin/bash -c 'zfs destroy -r rpool/local/root@boot || true && zfs snapshot rpool/local/root@boot'\"";
   };
 
   system.stateVersion = "23.11";

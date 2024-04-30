@@ -30,9 +30,12 @@
     directories = [
       "/var/log"
       "/etc/nixos"
+      "/root/.config"
     ];
     files = [
       "/etc/machine-id"
+      "/root/.bash_history"
+      "/root/.gitconfig"
     ];
   };
 
@@ -40,7 +43,15 @@
     pkgs.git
     pkgs.gh
   ];
-  # programs.git.enable = true;
+  systemd.services.save-root-snapshot = {
+    description = "save a snapshot of the initial root tree";
+    wantedBy = [ "sysinit.target" ];
+    requires = [ "-.mount" ];
+    after = [ "-.mount" ];
+    serviceConfig.Type = "oneshot";
+    serviceConfig.RemainAfterExit = true;
+    serviceConfig.ExecStart = "/bin/bash -c 'zfs destroy -r rpool/local/root@boot || true && zfs snapshot rpool/local/root@boot'";
+  };
 
   system.stateVersion = "23.11";
 }

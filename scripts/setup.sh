@@ -21,7 +21,7 @@ nix --experimental-features "nix-command flakes" run github:nix-community/disko 
 echo "Configuring NixOs"
 mkdir -p /mnt/etc/nixos/
 cp -a /tmp/nixos-main/. /mnt/etc/nixos/
-cp /etc/machine-id /mnt/etc/machine-id
 nixos-generate-config --no-filesystems --show-hardware-config > /mnt/etc/nixos/hardware-configuration.nix
 
-echo "Done"
+cp -r /mnt/etc/nixos /mnt/persist/etc/nixos
+nixos-install -j 100 --cores 8 --root /mnt --flake /mnt/etc/nixos#default

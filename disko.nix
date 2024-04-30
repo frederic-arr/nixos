@@ -30,7 +30,6 @@
                 type = "luks";
                 name = "crypted";
                 settings.allowDiscards = true;
-                additionalKeyFiles = [ "/tmp/additionalSecret.key" ];
                 content = {
                   type = "lvm_pv";
                   vg = "pool";

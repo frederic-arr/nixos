@@ -1,4 +1,15 @@
 { pkgs, lib, inputs, ... }:
+
+with lib;
+let
+  cfg = config.state;
+    save-root = pkgs.writers.writeDashBin "save-root"
+    ''
+      zfs destroy -r rpool/local/root@boot || true && zfs snapshot rpool/local/root@boot
+    '';
+
+in
+
 {
   imports =
     [
@@ -50,7 +61,7 @@
     after = [ "-.mount" ];
     serviceConfig.Type = "oneshot";
     serviceConfig.RemainAfterExit = true;
-    serviceConfig.ExecStart = "\"/bin/bash -c 'zfs destroy -r rpool/local/root@boot || true && zfs snapshot rpool/local/root@boot'\"";
+    serviceConfig.ExecStart = ''${save-root}/bin/save-root'';
   };
 
   system.stateVersion = "23.11";

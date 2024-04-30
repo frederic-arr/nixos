@@ -1,7 +1,12 @@
 {
+  device ? throw "Set this to your disk device (e.g. /dev/nvme0n1)",
+  swapSize ? throw "Set this to the amount of RAM you have (e.g. 16G)",
+  ...
+}:
+{
   disko.devices = {
     disk.main = {
-      device = "/dev/nvme0n1";
+      device = device;
       type = "disk";
       content = {
         type = "gpt";
@@ -22,10 +27,29 @@
               name = "crypted";
               settings.allowDiscards = true;
               content = {
-                type = "zfs";
-                pool = "rpool";
+                type = "lvm_pv";
+                vg = "rvg";
               };
             };
+          };
+        };
+      };
+    };
+    lvm_vg.rvg  = {
+      type = "lvm_vg";
+      lvs = {
+        swap = {
+          size = swapSize;
+          content = {
+            type = "swap";
+            resumeDevice = true;
+          };
+        };
+        root = {
+          size = "100%";
+          content = {
+            type = "zfs";
+            pool = "rpool";
           };
         };
       };

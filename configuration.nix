@@ -12,7 +12,7 @@ let
     diff-root = pkgs.writers.writeDashBin "diff-root"
     ''
       export PATH=${with pkgs; makeBinPath [ zfs ]}:$PATH
-      zfs diff -H rpool/local/root@boot | awk '! /\+\t\/tmp($|\/)/'
+      zfs diff -H rpool/local/root@boot | awk '! /^.\t\/(tmp|var\/tmp|var)/'
     '';
 in
 

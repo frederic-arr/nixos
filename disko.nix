@@ -32,6 +32,7 @@
     };
     zpool.rpool = {
       type = "zpool";
+      mountpoint = "/";
       rootFsOptions = {
         acltype = "posixacl";
         canmount = "off";

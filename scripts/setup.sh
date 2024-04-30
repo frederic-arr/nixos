@@ -16,6 +16,7 @@ curl -L https://github.com/frederic-arr/nixos/archive/refs/heads/main.zip -o /tm
 unzip /tmp/nixos-main.zip -d /tmp
 
 echo "Setting up partitions for $DEVICE + $SWAP SWAP"
+wipefs -fa $DEVICE
 nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/nixos-main/disko.nix --arg device "\"$DEVICE\"" --arg swapSize "\"$SWAP\""
 
 echo "Configuring NixOs"
@@ -26,4 +27,5 @@ nixos-generate-config --no-filesystems --show-hardware-config > /mnt/etc/nixos/h
 echo "Installing NixOs"
 mkdir -p /mnt/persist/etc/nixos
 cp -ra /mnt/etc/nixos/. /mnt/persist/etc/nixos/
-# nixos-install -j 100 --cores 8 --root /mnt --flake /mnt/etc/nixos#default
+nixos-install -j 100 --cores 8 --root /mnt --flake /mnt/etc/nixos#default
+reboot now

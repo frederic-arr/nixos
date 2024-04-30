@@ -36,5 +36,11 @@
     ];
   };
 
+  environment.systemPackages = [
+    pkgs.git
+    pkgs.gh
+  ];
+  # programs.git.enable = true;
+
   system.stateVersion = "23.11";
 }

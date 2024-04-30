@@ -29,3 +29,4 @@ mkdir -p /mnt/persist/etc/nixos
 cp -ra /mnt/etc/nixos/. /mnt/persist/etc/nixos/
 nixos-install -j 100 --cores 8 --root /mnt --flake /mnt/etc/nixos#default
 reboot now
+

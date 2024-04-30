@@ -5,67 +5,84 @@
 }:
 {
   disko.devices = {
-    disk = {
-      vdb = {
-        inherit device;
-        type = "disk";
-        content = {
-          type = "gpt";
-          partitions = {
-            ESP = {
-              size = "500M";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-                mountOptions = [
-                  "defaults"
-                ];
-              };
+    disk.main = {
+      device = device;
+      type = "disk";
+      content = {
+        type = "gpt";
+        partitions = {
+          ESP = {
+            type = "EF00";
+            size = "100M";
+            content = {
+              type = "filesystem";
+              format = "vfat";
+              mountpoint = "/boot";
             };
-            luks = {
-              size = "100%";
+          };
+          luks = {
+            size = "100%";
+            content = {
+              type = "luks";
+              name = "crypted";
+              settings.allowDiscards = true;
               content = {
-                type = "luks";
-                name = "crypted";
-                settings.allowDiscards = true;
-                content = {
-                  type = "lvm_pv";
-                  vg = "pool";
-                };
+                type = "lvm_pv";
+                vg = "rvg";
               };
             };
           };
         };
       };
     };
-    lvm_vg = {
-      pool = {
-        type = "lvm_vg";
-        lvs = {
-          root = {
-            size = "100M";
-            content = {
-              type = "filesystem";
-              format = "ext4";
-              mountpoint = "/";
-              mountOptions = [
-                "defaults"
-              ];
-            };
+    lvm_vg.rvg  = {
+      type = "lvm_vg";
+      lvs = {
+        swap = {
+          size = swapSize;
+          content = {
+            type = "swap";
+            resumeDevice = true;
           };
-          home = {
-            size = "10M";
-            content = {
-              type = "filesystem";
-              format = "ext4";
-              mountpoint = "/home";
-            };
+        };
+        root = {
+          size = "100%";
+          content = {
+            type = "zfs";
+            pool = "rpool";
           };
-          raw = {
-            size = "10M";
-          };
+        };
+      };
+    };
+    zpool.rpool = {
+      type = "zpool";
+      mountpoint = "/";
+      rootFsOptions = {
+        acltype = "posixacl";
+        canmount = "off";
+        dnodesize = "auto";
+        normalization = "formD";
+        relatime = "on";
+        xattr = "sa";
+        mountpoint = "none";
+      };
+      options = {
+        ashift = "12";
+        autotrim = "on";
+      };
+      datasets = {
+        "local/root" = {
+          type = "zfs_fs";
+          mountpoint = "/";
+          postCreateHook = "zfs snapshot rpool/local/root@blank";
+        };
+        "local/nix" = {
+          type = "zfs_fs";
+          mountpoint = "/nix";
+        };
+        "safe/persist" = {
+          type = "zfs_fs";
+          mountpoint = "/persist";
         };
       };
     };

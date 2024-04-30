@@ -28,6 +28,7 @@
     hideMounts = true;
     directories = [
       "/var/log"
+      "/etc/nixos"
     ];
     files = [
       "/etc/machine-id"

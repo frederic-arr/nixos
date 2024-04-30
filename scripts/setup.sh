@@ -1,5 +1,5 @@
-#!/bin/bash
-set -euo pipefail
+echo "Args($#): $@"
+
 if [[ $# != "2" ]]; then
     echo "Usage: $0 [device] [swapSize]"
     echo "Example: $0 /dev/nvme0n1 16G"

@@ -5,6 +5,7 @@ let
   cfg = config.state;
     save-root = pkgs.writers.writeDashBin "save-root"
     ''
+      export PATH=${with pkgs; makeBinPath [ zfs ]}:$PATH
       zfs destroy -r rpool/local/root@boot || true && zfs snapshot rpool/local/root@boot
     '';
 

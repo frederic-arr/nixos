@@ -27,9 +27,12 @@ in
     directories = [
       "/var/log"
       "/etc/nixos"
+      "/root/.config"
     ];
     files = [
       "/etc/machine-id"
+      "/root/.bash_history"
+      "/root/.gitconfig"
     ];
   };
 

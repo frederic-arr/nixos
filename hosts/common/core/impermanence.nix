@@ -26,7 +26,6 @@ in
     hideMounts = true;
     directories = [
       "/var/log"
-      "/etc/nixos"
       "/var/lib/nixos"
     ];
     files = [

@@ -6,4 +6,6 @@
     userName = "User";
     userEmail = "user@example.com";
   };
+
+  programs.gh.enable = true;
 }

@@ -11,7 +11,6 @@
 
   environment.systemPackages = [
     pkgs.git
-    pkgs.gh
   ];
 
   nixpkgs = {

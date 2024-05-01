@@ -27,6 +27,7 @@ in
     directories = [
       "/var/log"
       "/etc/nixos"
+      "/var/lib/nixos"
       "/root/.config"
     ];
     files = [

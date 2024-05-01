@@ -17,7 +17,7 @@
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, impermanence, home-manager, ... } @ inputs:
   let
     inherit (self) outputs;
     inherit (nixpkgs) lib;

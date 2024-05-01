@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, outputs, ... }:
 {
   imports = [
-    specialArgs.inputs.impermanence.nixosModules.home-manager.impermanence
+    (impermanence + "/home-manager.nix")
     ./git.nix
     ./impermanence.nix
   ];

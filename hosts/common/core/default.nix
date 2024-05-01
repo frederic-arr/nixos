@@ -1,6 +1,7 @@
 { inputs, outputs, ... }:
 {
   imports = [
+    inputs.disko.nixosModules.disko
     ./impermanence.nix
     ./locale.nix
     ./nix.nix
@@ -12,5 +13,5 @@
     };
   };
 
-  # hardware.enableAllFirmware = true;
+  hardware.enableAllFirmware = true;
 }

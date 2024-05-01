@@ -1,14 +1,9 @@
 {
   device ? throw "Set this to your disk device (e.g. /dev/nvme0n1)",
   swapSize ? throw "Set this to the amount of RAM you have (e.g. 16G)",
-  inputs,
   ...
 }:
 {
-  imports = [
-    inputs.disko.nixosModules.disko
-  ];
-
   disko.devices = {
     disk.main = {
       device = device;

@@ -17,7 +17,7 @@
     inherit (self) outputs;
     inherit (nixpkgs) lib;
     configLib = import ./lib { inherit lib; };
-    specialArgs = { inherit inputs outputs nixpkgs; };
+    specialArgs = { inherit inputs outputs configLib nixpkgs; };
   in
   {
     nixosConfigurations = {

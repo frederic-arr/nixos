@@ -8,7 +8,7 @@ let
   cfg = config.state;
     create-home-persist = pkgs.writers.writeDashBin "create-home-persist"
     ''
-      mkdir -p /persist/home/${user} && chown ${user} /persist/home/${user} && chmod rg=rwx,o= /persist/home/${user}
+      mkdir -p /persist/home/${user} && chown ${user} /persist/home/${user} && chmod ug=rwx,o= /persist/home/${user}
     '';
 in
 {

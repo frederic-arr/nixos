@@ -1,6 +1,7 @@
 { inputs, configLib, ... }:
 {
   imports = [
+    inputs.impermanence.nixosModules.impermanence
     (import (configLib.relativeToRoot "libs/disko.nix") { device = "/dev/nvme0n1"; swapSize = "16G"; })
     ./hardware-configuration.nix
     (configLib.relativeToRoot "hosts/common/core")

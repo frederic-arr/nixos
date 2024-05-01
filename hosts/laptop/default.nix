@@ -7,7 +7,10 @@
     (configLib.relativeToRoot "hosts/common/users/user")
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 5;
+  };
   networking.hostName = "laptop";
   networking.hostId = "8a99137d"; # Required for ZFS
 

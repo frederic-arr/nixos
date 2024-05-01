@@ -37,6 +37,7 @@ in
     ];
   };
 
+  programs.fuse.userAllowOther = true;
   environment.systemPackages = [
     diff-root
   ];

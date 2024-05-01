@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ inputs, configLib, ... }:
 {
   imports = [
     (import (configLib.relativeToRoot libs/disko.nix) { device = "/dev/nvme0n1"; swapSize = "16G"; })

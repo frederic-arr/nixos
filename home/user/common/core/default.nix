@@ -1,6 +1,7 @@
 { config, lib, pkgs, inputs, outputs, ... }:
 {
   imports = [
+    inputs.impermanence.nixosModules.home-manager.impermanence
     ./git.nix
     ./impermanence.nix
   ];

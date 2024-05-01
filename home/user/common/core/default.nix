@@ -13,5 +13,12 @@
       inherit (pkgs);
     };
     stateVersion = "23.11";
+
+    persistence."/persist/home/${config.home.username}" = {
+      removePrefixDirectory = true;
+      allowOther = true;
+      directories = [ ".config/gh" ];
+      files = [ ".bash_history" ];
+    };
   };
 }

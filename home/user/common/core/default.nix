@@ -12,6 +12,6 @@
     packages = builtins.attrValues {
       inherit (pkgs);
     };
-    stateVersion = "24.05";
+    stateVersion = "23.11";
   };
 }

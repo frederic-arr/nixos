@@ -9,10 +9,6 @@
     ./nix.nix
   ];
 
-  environment.systemPackages = [
-    pkgs.git
-  ];
-
   nixpkgs = {
     config = {
       allowUnfree = true;

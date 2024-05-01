@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, outputs, ... }:
 {
   imports = [
-    (inputs.impermanence + "/home-manager.nix")
+    inputs.impermanence.nixosModules.home-manager.impermanence
     ./git.nix
     ./impermanence.nix
   ];

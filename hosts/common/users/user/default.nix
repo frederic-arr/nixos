@@ -1,4 +1,4 @@
-{ pkgs, lib, configLib, inputs, ... }:
+{ pkgs, lib, config, configLib, inputs, ... }:
 {
   users.users."user" = {
     isNormalUser = true;
@@ -7,5 +7,5 @@
     packages = [ pkgs.home-manager ];
   };
 
-  home-manager.users.user = import (configLib.relativeToRoot "home/user/${config.networking.hostName}.nix");
+  home-manager.users."user" = import (configLib.relativeToRoot "home/user/${config.networking.hostName}.nix");
 }

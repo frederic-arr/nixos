@@ -13,7 +13,7 @@
     LC_TELEPHONE = "de_CH.UTF-8";
     LC_TIME = "de_CH.UTF-8";
   };
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "ch";
     xkbVariant = "fr";
   };

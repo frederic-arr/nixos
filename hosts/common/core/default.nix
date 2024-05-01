@@ -1,4 +1,4 @@
-{ inputs, outputs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     inputs.disko.nixosModules.disko
@@ -6,6 +6,11 @@
     ./impermanence.nix
     ./locale.nix
     ./nix.nix
+  ];
+
+  environment.systemPackages = [
+    pkgs.git
+    pkgs.gh
   ];
 
   nixpkgs = {

@@ -2,6 +2,7 @@
 {
   imports = [
     inputs.disko.nixosModules.disko
+    inputs.impermanence.nixosModules.impermanence
     ./impermanence.nix
     ./locale.nix
     ./nix.nix

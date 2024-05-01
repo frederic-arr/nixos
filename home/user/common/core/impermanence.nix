@@ -1,6 +1,6 @@
 { config, lib, pkgs, inputs, outputs, ... }:
 {
-  home.imports = [ (inputs.impermanence + "/home-manager.nix") ];
+  imports = [ (inputs.impermanence + "/home-manager.nix") ];
   home.persistence."/persist/home/${config.home.username}" = {
     removePrefixDirectory = true;
     allowOther = true;

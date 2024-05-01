@@ -12,15 +12,18 @@
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = {nixpkgs, ...} @ inputs:
+  outputs = { self, nixpkgs, ... } @ inputs:
+  let
+    inherit (self) outputs;
+    inherit (nixpkgs) lib;
+    specialArgs = { inherit inputs outputs nixpkgs; };
+  in
   {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        inputs.disko.nixosModules.default
-        inputs.impermanence.nixosModules.impermanence
-        ./configuration.nix
-      ];
+    nixosConfigurations = {
+      laptop = lib.nixosSystem {
+        inherit specialArgs;
+        modules = [ ./hosts/laptop ];
+      };
     };
   };
 }

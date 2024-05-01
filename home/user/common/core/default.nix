@@ -10,7 +10,7 @@
     username = "user";
     homeDirectory = "/home/${config.home.username}";
     packages = builtins.attrValues {
-      inherit (pkgs)
+      inherit (pkgs);
     };
   };
 }

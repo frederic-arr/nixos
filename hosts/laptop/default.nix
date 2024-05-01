@@ -8,6 +8,7 @@
   ];
 
   boot.loader.systemd-boot.enable = true;
+  networking.hostName = "laptop";
   networking.hostId = "8a99137d"; # Required for ZFS
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

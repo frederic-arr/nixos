@@ -3,7 +3,7 @@
   home.persistence."/persist/home/${config.home.username}" = {
     removePrefixDirectory = false;
     allowOther = true;
-    directories = [ ".config/gh" ];
+    directories = [ ];
     files = [ ".bash_history" ];
   };
 }

@@ -28,12 +28,9 @@ in
       "/var/log"
       "/etc/nixos"
       "/var/lib/nixos"
-      "/root/.config"
     ];
     files = [
       "/etc/machine-id"
-      "/root/.bash_history"
-      "/root/.gitconfig"
     ];
   };
 

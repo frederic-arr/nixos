@@ -4,6 +4,9 @@
     removePrefixDirectory = false;
     allowOther = true;
     directories = [ "nixos" ];
-    files = [ ".bash_history" ];
+    files = [
+      ".bash_history"
+      ".config/gh/hosts.yml"
+    ];
   };
 }

@@ -5,7 +5,17 @@
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
+
+    excludePackages = with pkgs; [
+      gnome-tour
+      # xterm
+    ];
   };
 
+  # Remove default gnome applications
   services.gnome.core-utilities.enable = false;
+
+  environment.systemPackages = [
+    pkgs.gnome-console
+  ];
 }

@@ -1,8 +1,9 @@
 { config, pkgs, ... }:
 {
-  programs.hyprland = {    
-    enable = true;    
-    xwayland.enable = true;    
-    nvidiaPatches = true; 
-  };
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    displayManager.gdm.wayland = true;
+    desktopManager.gnome.enable = true;
+  }
 }

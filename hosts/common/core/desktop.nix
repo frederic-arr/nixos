@@ -25,13 +25,16 @@
     libinput.touchpad = {
       naturalScrolling = true;
     };
+
+    excludePackages = with pkgs; [
+      xterm
+    ];
   };
 
   # Remove default gnome applications
   services.gnome.core-utilities.enable = false;
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
-    xterm
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

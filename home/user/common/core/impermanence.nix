@@ -11,6 +11,7 @@
     files = [
       ".bash_history"
       ".config/gh/hosts.yml"
+      # ".config/Code"
     ];
   };
 }

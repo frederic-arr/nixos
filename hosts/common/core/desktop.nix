@@ -2,6 +2,7 @@
 {
   services.xserver = {
     enable = true;
+    exportConfiguration = true;
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
     desktopManager.gnome = {
@@ -9,6 +10,9 @@
       extraGSettingsOverrides = ''
         [org.gnome.mutter]
         experimental-features=['scale-monitor-framebuffer']
+
+        [org.gnome.desktop.peripherals.touchpad]
+        tap-to-click = true
       '';
 
       extraGSettingsOverridePackages = [
@@ -16,17 +20,22 @@
       ];
     };
 
-    excludePackages = with pkgs; [
-      gnome-tour
-      # xterm
-    ];
+    libinput.enable = true;
+    libinput.touchpad = {
+      naturalScrolling = true;
+    };
   };
 
   # Remove default gnome applications
   services.gnome.core-utilities.enable = false;
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    xterm
+  ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.systemPackages = [
-    pkgs.gnome-console
+  environment.systemPackages = with pkgs; [
+    gnome-console
+    gnome.dconf-editor
   ];
 }

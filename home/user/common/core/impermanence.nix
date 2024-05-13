@@ -3,7 +3,11 @@
   home.persistence."/persist/home/${config.home.username}" = {
     removePrefixDirectory = false;
     allowOther = true;
-    directories = [ "nixos" ];
+    directories = [
+      "nixos"
+      ".ssh"
+      ".local/share/keyrings"
+    ];
     files = [
       ".bash_history"
       ".config/gh/hosts.yml"

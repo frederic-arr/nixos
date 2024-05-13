@@ -1,5 +1,7 @@
 {
     "window.titleBarStyle": "custom",
+    "window.zoomLevel": 1,
     "git.autofetch": true,
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "editor.fontFamily": "'Consolas', 'Droid Sans Mono', 'monospace', monospace"
 }

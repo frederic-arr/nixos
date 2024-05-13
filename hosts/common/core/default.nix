@@ -7,6 +7,7 @@
     ./impermanence.nix
     ./locale.nix
     ./nix.nix
+    ./desktop.nix
   ];
 
   nixpkgs = {

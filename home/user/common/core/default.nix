@@ -3,6 +3,7 @@
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
     ./git.nix
+    ./code.nix
     ./impermanence.nix
   ];
 

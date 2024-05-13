@@ -12,6 +12,7 @@
         experimental-features=['scale-monitor-framebuffer']
 
         [org.gnome.desktop.peripherals.touchpad]
+        click-method = 'default'
         tap-to-click = true
       '';
 

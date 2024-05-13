@@ -25,6 +25,7 @@
   # Remove default gnome applications
   services.gnome.core-utilities.enable = false;
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = [
     pkgs.gnome-console
   ];

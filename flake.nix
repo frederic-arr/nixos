@@ -3,6 +3,7 @@
      
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
@@ -18,12 +19,14 @@
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = { self, nixpkgs, impermanence, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, impermanence, home-manager, ... } @ inputs:
   let
+    system = "x86_64-linux";
     inherit (self) outputs;
     inherit (nixpkgs) lib;
+    unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
     configLib = import ./libs { inherit lib; };
-    specialArgs = { inherit inputs outputs configLib nixpkgs; };
+    specialArgs = { inherit inputs outputs configLib nixpkgs nixpkgs-unstable unstable; };
   in
   {
     nixosConfigurations = {

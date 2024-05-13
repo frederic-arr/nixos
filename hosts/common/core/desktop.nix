@@ -6,4 +6,6 @@
     displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
   };
+
+  services.gnome.core-utilities.enable = false;
 }

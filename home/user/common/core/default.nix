@@ -12,6 +12,9 @@
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = (_: true);
+
   programs.home-manager.enable = true;
   home = {
     username = "user";

@@ -4,7 +4,17 @@
     enable = true;
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
-    desktopManager.gnome.enable = true;
+    desktopManager.gnome = {
+      enable = true;
+      extraGSettingsOverrides = ''
+        [org.gnome.mutter]
+        experimental-features=['scale-monitor-framebuffer']
+      '';
+
+      extraGSettingsOverridePackages = [
+        pkgs.gnome.mutter
+      ];
+    };
 
     excludePackages = with pkgs; [
       gnome-tour

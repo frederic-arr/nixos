@@ -15,7 +15,7 @@
   networking.hostId = "8a99137d"; # Required for ZFS
 
   # Set scaling factor for gnome
-  hardware.video.hidpi.enable = true
+  hardware.video.hidpi.enable = true;
 
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

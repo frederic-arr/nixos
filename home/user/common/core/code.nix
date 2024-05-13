@@ -2,7 +2,8 @@
 {
   programs.vscode = {
     enable = true;
-    enableExtensionUpdateCheck = true;
-    enableUpdateCheck = true;
+    enableExtensionUpdateCheck = false;
+    enableUpdateCheck = false;
+    userSettings = builtins.fromJSON (builtins.readFile ./vscode/settings.json);
   };
 }

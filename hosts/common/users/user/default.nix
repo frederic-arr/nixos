@@ -7,7 +7,7 @@
   users.users."user" = {
     isNormalUser = true;
     initialPassword = "user";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     packages = [ pkgs.home-manager ];
   };
 

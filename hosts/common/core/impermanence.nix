@@ -27,6 +27,8 @@ in
     directories = [
       "/var/log"
       "/var/lib/nixos"
+      "/var/lib/bluetooth"
+      "/etc/NetworkManager/system-connection"
     ];
     files = [
       "/etc/machine-id"

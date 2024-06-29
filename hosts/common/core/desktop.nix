@@ -14,6 +14,7 @@
         [org.gnome.desktop.peripherals.touchpad]
         click-method = 'default'
         tap-to-click = true
+        speed = 0.3
       '';
 
       extraGSettingsOverridePackages = [

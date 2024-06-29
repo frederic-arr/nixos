@@ -7,6 +7,7 @@
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-yoga
     (configLib.relativeToRoot "hosts/common/core")
+    ./impermanence.nix
     (configLib.relativeToRoot "hosts/common/users/user")
   ];
 

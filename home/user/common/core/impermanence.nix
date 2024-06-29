@@ -7,6 +7,7 @@
       "nixos"
       ".ssh"
       ".local/share/keyrings"
+      ".local/state/wireplumber"
     ];
     files = [
       ".bash_history"

@@ -1,8 +1,11 @@
 {
-    "window.dialogStyle": "native",
-    "window.titleBarStyle": "custom",
-    "window.zoomLevel": 1,
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "editor.fontFamily": "'Consolas', 'Droid Sans Mono', 'monospace', monospace"
+  "explorer.compactFolders": false,
+  "files.enableTrash": false,
+  "window.dialogStyle": "custom",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 1,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "'Consolas', 'Droid Sans Mono', 'monospace', monospace"
 }

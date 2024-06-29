@@ -2,7 +2,8 @@
 {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
+    enableCompletion = false; # Already done by OMZ
+    zprof.enable = true;
 
     shellAliases = {
       ll = "ls -l";

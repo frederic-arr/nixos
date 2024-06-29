@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 {
+  services.libinput = {
+    enable = true;
+    touchpad.naturalScrolling = true;
+  };
+
   services.xserver = {
     enable = true;
     exportConfiguration = true;
@@ -20,11 +25,6 @@
       extraGSettingsOverridePackages = [
         pkgs.gnome.mutter
       ];
-    };
-
-    libinput.enable = true;
-    libinput.touchpad = {
-      naturalScrolling = true;
     };
 
     excludePackages = with pkgs; [

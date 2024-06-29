@@ -12,5 +12,6 @@
     shell = pkgs.zsh;
   };
 
+  home-manager.backupFileExtension = "backup";
   home-manager.users."user" = import (configLib.relativeToRoot "home/user/${config.networking.hostName}.nix");
 }

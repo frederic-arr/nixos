@@ -6,9 +6,19 @@
     directories = [
       "nixos"
       ".ssh"
-      config.xdg.stateHome
-      config.xdg.dataHome
-      config.xdg.cacheHome
+      ".cache"
+      ".local/state"
+      ".local/share"
+      
+      "Desktop"
+      "Downloads"
+      "Music"
+      "Pictures"
+      "Templates"
+      "Documents"
+      "Public"
+      "Videos"
+
 
       ".mozilla/firefox/default/storage"
     ];
@@ -27,6 +37,7 @@
       ".mozilla/firefox/default/pkcs11.txt"
       ".mozilla/firefox/default/sessionstore.jsonlz4"
       ".mozilla/firefox/default/xulstore.json"
+      ".mozilla/firefox/default/storage-sync-v2.sqlite"
       # ".config/Code"
     ];
   };

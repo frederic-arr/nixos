@@ -5,6 +5,7 @@
     ./git.nix
     ./code.nix
     ./web.nix
+    ./zsh.nix
     ./impermanence.nix
   ];
 

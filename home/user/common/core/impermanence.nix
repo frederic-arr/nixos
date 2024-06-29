@@ -6,8 +6,9 @@
     directories = [
       "nixos"
       ".ssh"
-      ".local/share/keyrings"
-      ".local/state/wireplumber"
+      config.xdg.stateHome
+      config.xdg.dataHome
+      config.xdg.cacheHome
     ];
     files = [
       ".bash_history"

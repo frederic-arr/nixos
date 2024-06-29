@@ -9,6 +9,7 @@
     initialPassword = "user";
     extraGroups = [ "wheel" "networkmanager" ];
     packages = [ pkgs.home-manager ];
+    shell = pkgs.zsh;
   };
 
   home-manager.users."user" = import (configLib.relativeToRoot "home/user/${config.networking.hostName}.nix");

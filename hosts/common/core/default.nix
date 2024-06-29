@@ -13,4 +13,7 @@
 
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
+
+  programs.zsh.enable = true;
+  environment.pathsToLink = [ "/share/zsh" ];
 }

@@ -11,7 +11,7 @@
     enable = true;
     gitCredentialHelper.enable = true;
     settings = {
-      git_protocol = "https";
+      git_protocol = "ssh";
       prompt = "enabled";
       aliases = {
         co = "pr checkout";

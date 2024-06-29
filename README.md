@@ -13,3 +13,15 @@ $ source <(curl https://raw.githubusercontent.com/frederic-arr/nixos/main/script
 
 ### Blogs
 - [Drake Rossman](https://drakerossman.com/)
+
+## TODO
+- VSCode
+    - Properly save VSCode state
+
+- Firefox
+    - Extensions
+    - Properly save Firefox state
+
+- 1Password
+- Mullvad
+- Docker

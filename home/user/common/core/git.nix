@@ -3,8 +3,8 @@
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
-    userName = "User";
-    userEmail = "user@example.com";
+    userName = "Frédéric Arroyo";
+    userEmail = "71824723+frederic-arr@users.noreply.github.com";
   };
 
   programs.gh = {

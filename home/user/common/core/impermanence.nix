@@ -9,10 +9,24 @@
       config.xdg.stateHome
       config.xdg.dataHome
       config.xdg.cacheHome
+
+      ".mozilla/firefox/default/storage"
     ];
     files = [
       ".bash_history"
       ".config/gh/hosts.yml"
+
+      ".mozilla/firefox/default/places.sqlite"
+      ".mozilla/firefox/default/favicons.sqlite"
+      ".mozilla/firefox/default/permissions.sqlite "
+      ".mozilla/firefox/default/content-prefs.sqlite"
+      ".mozilla/firefox/default/cookies.sqlite"
+      ".mozilla/firefox/default/webappsstore.sqlite"
+      ".mozilla/firefox/default/chromeappsstore.sqlite"
+      ".mozilla/firefox/default/cert9.db"
+      ".mozilla/firefox/default/pkcs11.txt"
+      ".mozilla/firefox/default/sessionstore.jsonlz4"
+      ".mozilla/firefox/default/xulstore.json"
       # ".config/Code"
     ];
   };

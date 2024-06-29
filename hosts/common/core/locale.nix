@@ -7,11 +7,11 @@
     LC_IDENTIFICATION = "de_CH.UTF-8";
     LC_MEASUREMENT = "de_CH.UTF-8";
     LC_MONETARY = "de_CH.UTF-8";
-    LC_NAME = "de_CH.UTF-8";
+    LC_NAME = "en_DK.UTF-8";
     LC_NUMERIC = "de_CH.UTF-8";
     LC_PAPER = "de_CH.UTF-8";
     LC_TELEPHONE = "de_CH.UTF-8";
-    LC_TIME = "de_CH.UTF-8";
+    LC_TIME = "en_DK.UTF-8";
   };
   services.xserver.xkb = {
     layout = "ch";

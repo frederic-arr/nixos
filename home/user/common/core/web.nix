@@ -18,6 +18,8 @@
       # https://www.privacytools.io/
 
       # Other
+      "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+      "browser.uiCustomization.state" = ''{"placements":{"widget-overflow-fixed-list":[],"unified-extensions-area":["ublock0_raymondhill_net-browser-action","sponsorblocker_ajay_app-browser-action","addon_darkreader_org-browser-action"],"nav-bar":["back-button","forward-button","stop-reload-button","customizableui-special-spring1","urlbar-container","customizableui-special-spring2","save-to-pocket-button","downloads-button","fxa-toolbar-menu-button","unified-extensions-button"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["firefox-view-button","tabbrowser-tabs","new-tab-button","alltabs-button"],"PersonalToolbar":["import-button","personal-bookmarks"]},"seen":["save-to-pocket-button","developer-button","addon_darkreader_org-browser-action","sponsorblocker_ajay_app-browser-action","ublock0_raymondhill_net-browser-action"],"dirtyAreaCache":["nav-bar","PersonalToolbar","toolbar-menubar","TabsToolbar","unified-extensions-area"],"currentVersion":20,"newElementCount":3}'';
       "media.eme.enabled" = true;
       "browser.tabs.warnOnClose" = true;
       "beacon.enabled" = false;
@@ -147,19 +149,7 @@
       /** [SECTION] DNS */
       "network.dns.disablePrefetch" = true; # disable dns prefetching
       "network.dns.skipTRR-when-parental-control-enabled" = false;  # Arkenfox user.js v117
-      "doh-rollout.provider-list" = "[{\"UIName\":\"Mozilla Cloudflare\",\"uri\":\"https://mozilla.cloudflare-dns.com/dns-query\"},{\"UIName\":\"Quad9\",\"uri\":\"https://dns.quad9.net/dns-query\"},{\"UIName\":\"Quad9+ECS\",\"uri\":\"https://dns11.quad9.net/dns-query\"}]";
-      /**
-      * librewolf does not use DoH, but it can be enabled with the following prefs:
-      "network.trr.mode" = 2;
-      "network.trr.uri" = "https://dns.quad9.net/dns-query";
-      * 
-      * the possible modes are:
-      * 0 = default
-      * 1 = browser picks faster
-      * 2 = DoH with system dns fallback
-      * 3 = DoH without fallback
-      * 5 = DoH is off, default currently
-      */
+      "doh-rollout.provider-list" = ''[{"UIName":"Mozilla Cloudflare","uri":"https://mozilla.cloudflare-dns.com/dns-query"},{"UIName":"Quad9","uri":"https://dns.quad9.net/dns-query"},{"UIName":"Quad9+ECS","uri":"https://dns11.quad9.net/dns-query"}]'';
 
       /** [SECTION] PREFETCHING AND SPECULATIVE CONNECTIONS
       * disable prefecthing for different things such as links, bookmarks and predictions.

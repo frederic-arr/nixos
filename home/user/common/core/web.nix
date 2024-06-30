@@ -1,6 +1,7 @@
 { unstable, lib, pkgs, inputs, config, ... }:
 {
   programs.firefox.enable = true;
+  
   # TODO: Switch to policies
   programs.firefox.profiles.default = {
     id = 0;
@@ -18,6 +19,7 @@
       # https://www.privacytools.io/
 
       # Other
+      "general.useragent.override" = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
       "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
       "browser.uiCustomization.state" = ''{"placements":{"widget-overflow-fixed-list":[],"unified-extensions-area":["ublock0_raymondhill_net-browser-action","sponsorblocker_ajay_app-browser-action","addon_darkreader_org-browser-action"],"nav-bar":["back-button","forward-button","stop-reload-button","customizableui-special-spring1","urlbar-container","customizableui-special-spring2","save-to-pocket-button","downloads-button","fxa-toolbar-menu-button","unified-extensions-button"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["firefox-view-button","tabbrowser-tabs","new-tab-button","alltabs-button"],"PersonalToolbar":["import-button","personal-bookmarks"]},"seen":["save-to-pocket-button","developer-button","addon_darkreader_org-browser-action","sponsorblocker_ajay_app-browser-action","ublock0_raymondhill_net-browser-action"],"dirtyAreaCache":["nav-bar","PersonalToolbar","toolbar-menubar","TabsToolbar","unified-extensions-area"],"currentVersion":20,"newElementCount":3}'';
       "media.eme.enabled" = true;
@@ -166,7 +168,7 @@
       * librewolf should stick to RFP for fingerprinting. we should not set prefs that interfere with it
       * and disabling API for no good reason will be counter productive, so it should also be avoided.  
       */
-      "privacy.resistFingerprinting" = true;
+      "privacy.resistFingerprinting" = false;
 
       # rfp related settings
       "privacy.resistFingerprinting.block_mozAddonManager" = true; # prevents rfp from breaking AMO

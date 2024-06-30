@@ -15,12 +15,11 @@ in
 {
   systemd.services.save-sysfs = {
     description = "save sysfs values";
-    unitConfig.DefaultDependencies = false;
-    after = [ "final.target" ];
     serviceConfig.Type = "oneshot";
     serviceConfig.RemainAfterExit = true;
-    serviceConfig.ExecStart = ''${save-sysfs}/bin/save-sysfs'';
-    wantedBy = [ "final.target" ];
+    serviceConfig.ExecStart = ''${with pkgs; makeBinPath [ coreutils ]}/true'';
+    serviceConfig.ExecStop = ''${save-sysfs}/bin/save-sysfs'';
+    wantedBy = [ "multi-user.target" ];
   };
 
   systemd.services.restore-sysfs = {

@@ -18,3 +18,4 @@ $ source <(curl https://raw.githubusercontent.com/frederic-arr/nixos/main/script
 - 1Password
 - Mullvad
 - Docker
+- Rust

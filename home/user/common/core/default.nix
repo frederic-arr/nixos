@@ -14,6 +14,10 @@
   dconf = {
     enable = true;
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    settings."org/gnome/desktop/wm/keybindings".switch-to-workspace-up = [];
+    settings."org/gnome/desktop/wm/keybindings".switch-to-workspace-down = [];
+    settings."org/gnome/desktop/wm/keybindings".switch-applications = [];
+    settings."org/gnome/desktop/wm/keybindings".switch-windows = ["<Alt>Tab"];
   };
 
   nixpkgs.config.allowUnfree = true;

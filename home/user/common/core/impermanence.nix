@@ -20,6 +20,7 @@
       "Videos"
 
       ".mozilla"
+      ".config/Code"
     ];
     files = [
       ".bash_history"

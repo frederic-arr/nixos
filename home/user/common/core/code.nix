@@ -19,6 +19,11 @@
       visualstudioexptteam.vscodeintellicode
       visualstudioexptteam.intellicode-api-usage-examples
       ms-vscode-remote.remote-containers
+      github.copilot
+      github.copilot-chat
+      github.vscode-pull-request-github
+      ms-azuretools.vscode-docker
+      esbenp.prettier-vscode
     ];
   };
 }

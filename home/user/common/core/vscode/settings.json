@@ -1,11 +1,32 @@
 {
+  // Visual
   "explorer.compactFolders": false,
-  "files.enableTrash": false,
   "window.dialogStyle": "custom",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 1.2,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "'Consolas', 'Droid Sans Mono', 'monospace', monospace",
+
+  // Misc
+  "files.enableTrash": false,
+  "extensions.autoCheckUpdates": false,
+  "update.mode": "none",
+  "update.showReleaseNotes": false,
+  "explorer.incrementalNaming": "smart",
+
+  // Editor
+  "editor.linkedEditing": true,
+  "editor.formatOnPaste": true,
+  "files.hotExit": "onExitAndWindowClose",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Source Control
   "git.autofetch": true,
   "git.confirmSync": false,
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.fontFamily": "'Consolas', 'Droid Sans Mono', 'monospace', monospace"
+  "github.gitProtocol": "ssh",
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.plusFeatures.enabled": false,
+  "gitlens.codeLens.enabled": false
 }

@@ -24,6 +24,8 @@
       github.vscode-pull-request-github
       ms-azuretools.vscode-docker
       esbenp.prettier-vscode
+      rust-lang.rust-analyzer
+      golang.go
     ];
   };
 }

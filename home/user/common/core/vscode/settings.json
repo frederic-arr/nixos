@@ -20,6 +20,7 @@
   "files.hotExit": "onExitAndWindowClose",
   "editor.wordWrap": "wordWrapColumn",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "window.newWindowDimensions": "maximized",
 
   // Source Control
   "git.autofetch": true,

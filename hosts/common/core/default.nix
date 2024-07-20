@@ -9,6 +9,7 @@
     ./nix.nix
     ./audio.nix
     ./desktop.nix
+    ./rust.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

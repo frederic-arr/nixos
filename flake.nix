@@ -22,9 +22,14 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
-  outputs = { self, nixpkgs-stable, nixpkgs-unstable, impermanence, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs-stable, nixpkgs-unstable, impermanence, home-manager, fenix, ... } @ inputs:
   let
     system = "x86_64-linux";
     inherit (self) outputs;
@@ -32,7 +37,18 @@
     stable = import nixpkgs-stable { inherit system; config.allowUnfree = true; };
     unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
     configLib = import ./libs { inherit lib; };
-    specialArgs = { inherit inputs outputs configLib nixpkgs-stable nixpkgs-unstable stable unstable; };
+    specialArgs = {
+      inherit
+      inputs
+      outputs
+      configLib
+      nixpkgs-stable
+      nixpkgs-unstable
+      stable
+      unstable
+      system
+      fenix;
+    };
   in
   {
     nixosConfigurations = {

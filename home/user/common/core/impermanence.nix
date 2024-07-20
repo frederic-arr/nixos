@@ -18,7 +18,10 @@
       "Documents"
       "Public"
       "Videos"
+      "dev"
 
+      ".pki"
+      ".cargo"
       ".mozilla"
       ".config/Code"
     ];
